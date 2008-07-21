@@ -1,0 +1,68 @@
+/* ################### */
+/*       =LISTS        */
+/* ################### */ 
+
+ul.admin_list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul.admin_list li{
+  padding: 3px 3px 3px 10px;
+  clear: left;
+}
+
+ul.admin_list ul li{
+  float: none;
+  clear: none;
+  padding: 0;
+}
+
+ul.admin_list li .editbuttons {
+  display: block;
+  padding: 0 6px 0 0;
+  float: left;
+  margin: 0px 5px 0 0;
+  border-right: dotted 1px grey;
+}
+
+ul.admin_list li:hover .editbuttons {
+  display: block;
+  float: left;
+  margin: 0px 5px 0 0;
+}
+
+ul.admin_list li .editbuttons a{
+  display: inline;
+  clear: none;
+  padding-right: 3px;
+}
+
+
+ul.admin_list div.title_and_buttons {
+  height:  22px;
+}
+
+ul.admin_list li:hover {
+  border-left: solid #D6D6D6 3px;
+  background-color: #F6F6DF;
+  padding-left: 7px;
+}
+
+
+ul.admin_list ul li:hover {
+  border-left: none;
+  padding-left: 0px;
+}
+
+ul.admin_list li.draggable {
+  padding-left: 5px;
+}
+
+ul.admin_list li.draggable:hover {
+  border-left: solid #9DD06A 3px;
+  padding-left: 2px;
+  cursor: pointer;
+}
+

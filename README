@@ -1,0 +1,36 @@
+AdminLists
+==========
+
+This plugin will create pretty lists of records for your admin area.
+It will automatically create buttons for certain toggle-able fields (eg published, featured) 
+if your model has them, and will add drag and drop ordering for any records 
+that act_as_list.
+
+It requires restful routing, admin name-spaced controllers, and 
+various other configurations, so it is not for public consumption at this point.
+
+There are 2 other parts to this that have not been extracted yet.
+admin_association_list will create admin lists for model associations, 
+so you can have a form for your primary model, and inside of that a list
+with it's associations. It allows you to edit associations in place, and
+dynamically add more. There are also rjs helpers for updating the list,
+on edit, update and destroy.
+
+Installation
+============
+./script/generate admin_lists
+
+Example
+=======
+
+Controller code
+
+def index
+  @models = Model.find(:all)
+end
+
+View code
+
+admin_list :model
+
+Copyright (c) 2007 Joshua Bates, released under the MIT license
