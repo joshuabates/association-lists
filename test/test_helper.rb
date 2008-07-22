@@ -30,11 +30,21 @@ module Admin
   class AdminListModelsController 
     def url_for(*args); 'url' end
     def capture; '' end
+    def protect_against_forgery?
+      false
+    end
   end
 end
 
 module ActiveRecord; module Acts; module List; module InstanceMethods
 end; end; end; end
+
+
+class AdminList
+  def protect_against_forgery?
+    false
+  end
+end
 
 class Array
   def except(*keys)
