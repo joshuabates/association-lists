@@ -1,6 +1,10 @@
 AdminLists
 ==========
 
+I'm resurrecting this plugin I started extracting from http://www.democracynow.org along time ago.
+It may not even work in rails 2, but I'm hoping to get it working alongside attribute_fu for a light
+weight solution to admin forms...
+
 This plugin will create pretty lists of records for your admin area.
 It will automatically create buttons for certain toggle-able fields (eg published, featured) 
 if your model has them, and will add drag and drop ordering for any records 
@@ -33,4 +37,4 @@ View code
 
 admin_list :model
 
-Copyright (c) 2007 Joshua Bates, released under the MIT license
+Copyright (c) 2008 Joshua Bates, released under the MIT license
