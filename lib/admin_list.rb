@@ -41,7 +41,9 @@ class AdminList
   
   def sortable?
     @sortable unless @sortable.nil?
-    @sortable = @model_klass.included_modules.include? ActiveRecord::Acts::List::InstanceMethods
+    if ActiveRecord.respond_to? :acts_as_list
+      @sortable = @model_klass.included_modules.include? ActiveRecord::Acts::List::InstanceMethods
+    end
   end
   
   def sortable_url

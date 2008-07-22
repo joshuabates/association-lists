@@ -33,6 +33,9 @@ module Admin
   end
 end
 
+module ActiveRecord; module Acts; module List; module InstanceMethods
+end; end; end; end
+
 class Array
   def except(*keys)
     self.reject { |v| keys.include?(v || v.to_s)}

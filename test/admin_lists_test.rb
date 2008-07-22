@@ -57,11 +57,17 @@ class AdminListsTest < Test::Unit::TestCase
     assert_kind_of String, @admin_list.sortable_javascript
   end
   
+  def test_sortable_should_check_if_acts_as_a_list_is_included
+    ActiveRecord.expects(:respond_to?).with(:acts_as_list).returns(false)
+    assert !@admin_list.sortable?
+  end
+  
   def test_sortable_should_check_if_the_model_acts_as_a_list
+    ActiveRecord.expects(:respond_to?).with(:acts_as_list).returns(true)
     im_mock = mock
     im_mock.expects(:include?).with(ActiveRecord::Acts::List::InstanceMethods)
     @mock_model.class.stubs(:included_modules).returns im_mock
-    @admin_list.sortable?
+    assert !@admin_list.sortable?
   end
   
   def test_li_tag_should_be_an_li_tag
