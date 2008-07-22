@@ -16,6 +16,8 @@ rescue LoadError
 end
 
 require File.expand_path(File.join(File.dirname(__FILE__), '../init.rb'))
+$LOAD_PATH << File.expand_path(File.join(File.dirname(__FILE__), 'vendor/shoulda/lib'))
+require 'shoulda.rb'
 
 class AdminListModel < OpenStruct
   attr_reader :id
