@@ -1,8 +1,21 @@
 RAILS_ENV = 'test'
-require File.expand_path(File.join(File.dirname(__FILE__), '../../../../config/environment.rb'))
+
+require 'rubygems'
 require 'test/unit'
 require 'mocha'
 require 'ostruct'
+
+begin
+  require File.expand_path(File.join(File.dirname(__FILE__), '../../../../config/environment.rb'))
+rescue LoadError
+  require 'active_support'
+  require 'action_controller'
+  require 'html/document'
+  require 'action_view'
+  require 'active_record'
+end
+
+require File.expand_path(File.join(File.dirname(__FILE__), '../init.rb'))
 
 class AdminListModel < OpenStruct
   attr_reader :id
@@ -13,9 +26,11 @@ class AdminListModel < OpenStruct
   def locked; false end
 end
 
-class Admin::AdminListModelsController 
-  def url_for(*args); 'url' end
-  def capture; '' end
+module Admin
+  class AdminListModelsController 
+    def url_for(*args); 'url' end
+    def capture; '' end
+  end
 end
 
 class Array

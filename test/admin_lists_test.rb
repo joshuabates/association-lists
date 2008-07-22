@@ -1,5 +1,4 @@
 require File.expand_path(File.join(File.dirname(__FILE__), 'test_helper'))
-require 'admin_list'
 
 class AdminListsTest < Test::Unit::TestCase
   include ActionView::Helpers::RecordIdentificationHelper
